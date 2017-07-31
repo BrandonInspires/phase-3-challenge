@@ -27,9 +27,12 @@ app.post('/api/array/concat', (req, res) => {
   let flattenedArray = Object.values(req.body).reduce(function(a, b){
     return a.concat(b);
   });
-  console.log('Are all elements arrays::', Object.values(req.body).every(isArray));
+ if (Object.values(req.body).every(isArray)) {
+  res.set('Content-Type', 'application/text').status(200).send(`{"result": ${flattenedArray} }`);
+ } else {
+  res.set('Content-Type', 'application/text').status(400).send(`{"error": "Input data should be of type Array."}`);
+ }
 
-  res.set('Content-Type', 'application/text').send(`{"result": ${flattenedArray} } `);
 });
 
 const isArray = function(element, index, array) {
