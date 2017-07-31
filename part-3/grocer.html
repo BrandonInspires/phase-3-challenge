@@ -5,13 +5,14 @@
     <title>Grocer</title>
 
     <link rel="stylesheet" href="grocer.css">
+    <script src="grocer.js">  </script>
   </head>
   <body class="flex flex-column">
     <header class="site-header flex flex-row-between">
       <h1>Grocer</h1>
-      <button type="button" id="cart-button">
+      <button type="button" onclick="document.getElementById('id01').style.display='block'; cart.GetAllItems(); cart.updateTotal();" id="cart-button">
         Cart
-        &nbsp;<span id="cart-item-count">(3)</span>
+        &nbsp;<span id="cart-item-count">(0) </span>
       </button>
     </header>
 
@@ -31,17 +32,17 @@
           <li class="item flex flex-row-between">
             <span class="item-name">Onions</span>
             <span class="item-price">$1.11</span>
-            <button type="button">Add to cart</button>
+            <button type="button" onclick="cart.AddItem('Onions',1.11); cart.updateTotal()";>Add to cart</button>
           </li>
           <li class="item flex flex-row-between">
             <span class="item-name">Tomatoes</span>
             <span class="item-price">$1.56</span>
-            <button type="button">Add to cart</button>
+            <button type="button" onclick="cart.AddItem('Tomatoes',1.56); cart.updateTotal()";>Add to cart</button>
           </li>
           <li class="item flex flex-row-between">
             <span class="item-name">Carrots</span>
             <span class="item-price">$2.88</span>
-            <button type="button">Add to cart</button>
+            <button type="button" onclick="cart.AddItem('Carrots',2.88); cart.updateTotal()";>Add to cart</button>
           </li>
         </ul>
 
@@ -50,7 +51,7 @@
           <li class="item flex flex-row-between">
             <span class="item-name">Cold Cuts</span>
             <span class="item-price">$1.47</span>
-            <button type="button">Add to cart</button>
+            <button type="button" onclick="cart.AddItem('Cold Cuts',1.47); cart.updateTotal()";>Add to cart</button>
           </li>
         </ul>
 
@@ -59,20 +60,33 @@
           <li class="item flex flex-row-between">
             <span class="item-name">Orange Juice</span>
             <span class="item-price">$2.52</span>
-            <button type="button">Add to cart</button>
+            <button type="button" onclick="cart.AddItem('Orange Juice',2.52); cart.updateTotal()";>Add to cart</button>
           </li>
           <li class="item flex flex-row-between">
             <span class="item-name">Ice Cream</span>
             <span class="item-price">$14.08</span>
-            <button type="button">Add to cart</button>
+            <button type="button" onclick="cart.AddItem('Ice Cream',14.08); cart.updateTotal()";>Add to cart</button>
           </li>
           <li class="item flex flex-row-between">
             <span class="item-name">Pizza</span>
             <span class="item-price">$16.61</span>
-            <button type="button">Add to cart</button>
+            <button type="button" onclick="cart.AddItem('Pizza',16.61); cart.updateTotal()";>Add to cart</button>
           </li>
         </ul>
       </div>
     </div>
-  </body>
+   
+    
+    <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none' " class="close">&times;</span>
+        <p id="cartList">Default</p>
+        <p id="totalPrice">Default</p>
+      </div>
+    </div>
+  </div>
+ 
+
+</body>
 </html>
