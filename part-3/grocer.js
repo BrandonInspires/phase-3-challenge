@@ -9,12 +9,16 @@ const shoppingCart = function () {
         };
 
         obj.GetAllItems = () => {
-            document.getElementById("cartList").innerHTML = `<h2>CART<span onclick="document.getElementById('id01').style.display='none' " style="text-align:right;" id="close">&times;</span></h2> `
+            document.getElementById("cartList").innerHTML = ``;
+            if (items.length !== 0) {
             items.forEach(function myFunction(item) {
-                document.getElementById("cartList").innerHTML += `<li>${item.name} : <span class="item_price"> $${item.price}</span></li>`;
+                document.getElementById("cartList").innerHTML += `<li>${item.name} : <span style="margin-right: 12px;"> $${item.price}</span></li>`;
             })
-            // document.getElementById("cartList").innerHTML = items.map((item) => `<li>${item.name} : ${item.price}</li>`) ;
-            
+            // document.getElementById("cartList").innerHTML = items.map((item) => `<li>${item.name} : ${item.price}</li>`) 
+            } else {
+                document.getElementById("cartList").innerHTML = `Your Cart Is Empty`;
+
+            }
         };
 
         obj.CalculateTotal = () => {
@@ -26,10 +30,13 @@ const shoppingCart = function () {
         };
 
         obj.ClearCart = () => {
-             this.items = [];
+             document.getElementById("cartList").innerHTML = `Your Cart Is Empty`;
+             items = [];
+            document.getElementById("cart-item-count").innerHTML = `(${items.length})`;
+            document.getElementById("totalPrice").innerHTML = `<p class="w3-display-bottomright"> Total $${cart.CalculateTotal()}</p>`;
         };
         obj.updateTotal = () => {
-    document.getElementById("totalPrice").innerHTML = `<p><button onclick="cart.ClearCart()">Clear</button> Total $${cart.CalculateTotal()}</p>`;
+    document.getElementById("totalPrice").innerHTML = `<p class="w3-display-bottomright"> Total $${cart.CalculateTotal()}</p>`;
     document.getElementById("cart-item-count").innerHTML = `(${items.length})`;
 };
 

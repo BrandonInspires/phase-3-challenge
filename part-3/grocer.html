@@ -80,9 +80,10 @@
     <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
-        <span onclick="document.getElementById('id01').style.display='none' " class="close">&times;</span>
-        <p id="cartList">Default</p>
-        <p id="totalPrice">Default</p>
+        <span onclick="document.getElementById('id01').style.display='none' " class="w3-display-topright ">&times;</span>
+        <h2>CART</h2>
+        <ul id="cartList"></ul>
+       <p><button type="button" onclick="cart.ClearCart()">Clear</button> <span id="totalPrice">Total: $0.00</p>
       </div>
     </div>
   </div>
