@@ -3,16 +3,16 @@
 
 
 
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (1, 'Karola Maskrey', 5);
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (2, 'Malissia Tipling', 3);
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (3, 'Elijah Lawie', 7);
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (4, 'Alexandre Sydney', 9);
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (5, 'Wendy Kuhnt', 4);
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (6, 'Josselyn Middleweek', 1);
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (7, 'Maisie Berzen', 8);
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (8, 'Sherline Cicchillo', 1);
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (9, 'Jada Colliber', 1);
-INSERT INTO shoppers (shopper_id, shopper_name, order_id) VALUES (10, 'Jerry Washington', 4);
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (1, 'Karola Maskrey');
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (2, 'Malissia Tipling');
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (3, 'Elijah Lawie');
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (4, 'Alexandre Sydney');
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (5, 'Wendy Kuhnt');
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (6, 'Josselyn Middleweek');
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (7, 'Maisie Berzen');
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (8, 'Sherline Cicchillo');
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (9, 'Jada Colliber');
+INSERT INTO shoppers (shopper_id, shopper_name) VALUES (10, 'Jerry Washington');
 	
 INSERT INTO grocery_items (name, price, section) VALUES ('Aluminum Foil',8.84,'miscellaneous');
 INSERT INTO grocery_items (name, price, section) VALUES ('Apples',10.81,'produce');
@@ -57,12 +57,12 @@ INSERT INTO grocery_items (name, price, section) VALUES ('Tomatoes',1.56,'produc
 INSERT INTO grocery_items (name, price, section) VALUES ('Yogurt',18.67,'dairy');
 
 INSERT INTO orders (id, shopper_id, total_cost) VALUES (1,4,11.98);
-INSERT INTO orders (id, shopper_id, total_cost) VALUES (4,3,18.85);
+INSERT INTO orders (id, shopper_id, total_cost) VALUES (2,3,18.85);
 INSERT INTO orders (id, shopper_id, total_cost) VALUES (3,9,24.4);
 INSERT INTO orders (id, shopper_id, total_cost) VALUES (4,3,46.98);
 INSERT INTO orders (id, shopper_id, total_cost) VALUES (5,2,40.64);
-INSERT INTO orders (id, shopper_id, total_cost) VALUES (7,9,46.03);
+INSERT INTO orders (id, shopper_id, total_cost) VALUES (6,9,46.03);
 INSERT INTO orders (id, shopper_id, total_cost) VALUES (7,5,9.83);
 INSERT INTO orders (id, shopper_id, total_cost) VALUES (8,4,56.51);
-INSERT INTO orders (id, shopper_id, total_cost) VALUES (1,1,59.37);
-INSERT INTO orders (id, shopper_id, total_cost) VALUES (4,9,28.68);
+INSERT INTO orders (id, shopper_id, total_cost) VALUES (9,1,59.37);
+INSERT INTO orders (id, shopper_id, total_cost) VALUES (10,9,28.68);

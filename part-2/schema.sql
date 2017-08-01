@@ -16,8 +16,7 @@ CREATE TABLE grocery_items (
 
 CREATE TABLE shoppers (
     shopper_id integer PRIMARY KEY,
-    shopper_name varchar(255) NOT NULL,
-    order_id integer NOT NULL
+    shopper_name varchar(255) NOT NULL
 );
 -- CREATE TABLE  ( 
 -- )
