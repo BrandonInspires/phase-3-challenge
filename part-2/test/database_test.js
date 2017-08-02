@@ -4,6 +4,8 @@ const options = {
     promiseLib: promise
 };
 const pgp = require('pg-promise')(options);
+const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/grocery_store';
+// const db =  pgp(connectionString);
 
 const {
     productList,
@@ -18,24 +20,11 @@ let {
 } = require('./data')
 const print = require('node-print');
 
-const routes = require('../store')
 
 
+const assert = require('chai').assert;
 
-var chai = require("chai");
-var chaiAsPromised = require("chai-as-promised");
-
-chai.use(chaiAsPromised);
-
-// Then either:
-var expect = chai.expect;
-// or:
-var assert = chai.assert;
-// or:
-var should = chai.should();
-// according to your preference of assertion style
-
-describe("Product List Command", () => {
+describe("Product List Function", () => {
     it('product-list function should return a table of dairy products', () => {
         return productList("dairy")
             .then((data) => {
@@ -43,19 +32,19 @@ describe("Product List Command", () => {
             })
     })
 })
-describe("Shopper Order Command", () => {
+describe("Shopper Order Function", () => {
     it("shopper-order function should return shopper #4's orders", () => {
-        return shopperOrders(4).should.eventually.equal(print.pt(orders))
-            // .then((data) => {
-            //     assert(data == print.pt(orders), "does not return a table")
-            // })
+        return shopperOrders(4)
+            .then((data) => {
+                assert(data, print.pt(orders), "does not return a table")
+            })
     })
 })
-describe("Real Shoppers Command", () => {
+describe("Real Shoppers Function", () => {
     it('real-shoppers function should return a table of shoppers', () => {
         return realShoppers()
             .then((data) => {
-                assert(data == print.pt(shoppers), "does not return a table")
+                assert(data, print.pt(shoppers), "does not return a table")
             })
     })
 })
