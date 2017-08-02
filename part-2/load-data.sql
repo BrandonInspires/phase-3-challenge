@@ -1,4 +1,3 @@
--- COPY grocery_items (name, price, section) FROM '/Users/vagabonding.io/Github/phase-3-challenge/part-2/grocery.csv' DELIMITER ',' CSV;
 \c grocery_store
 
 
