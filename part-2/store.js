@@ -13,8 +13,8 @@ function routes(command, argument) {
     switch (command) {
         case "product-list":
             return productList(argument)
-                .then(list => print.pt(list))
-                .catch(error => error);
+                    .then(list => print.pt(list))
+                    .catch(error => error);
             break;
         case "shopper-orders":
             return shopperOrders(argument)
