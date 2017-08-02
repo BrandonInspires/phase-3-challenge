@@ -39,8 +39,8 @@ function route (command, argument) {
     }
 }
 route(command, argument)
-function display () {
-//  print.pt(route(command, argument))
+// function display () {
+// //  print.pt(route(command, argument))
 
-}
-display();
+// }
+// display();

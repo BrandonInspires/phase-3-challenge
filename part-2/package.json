@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "Mocha"
+    "import": "psql < load-data.sql",
+    "schema": "psql < schema.sql",
+    "test": "mocha --recursive"
   },
   "keywords": [],
   "author": "",
