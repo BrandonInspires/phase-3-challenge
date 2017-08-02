@@ -18,13 +18,11 @@ function routes(command, argument) {
             break;
         case "shopper-orders":
             return shopperOrders(argument)
-            productList(argument)
                 .then(orders => print.pt(orders))
                 .catch(error => error);
             break;
         case "real-shoppers":
             return realShoppers()
-            productList(argument)
                 .then(shoppers => print.pt(shoppers))
                 .catch(error => error);
             break;
