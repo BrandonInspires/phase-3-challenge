@@ -1,11 +1,4 @@
-const promise = require('bluebird');
-const options = {
-    // Initialization Options
-    promiseLib: promise
-};
-const pgp = require('pg-promise')(options);
-const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/grocery_store';
-// const db =  pgp(connectionString);
+// Importing Testable Functions
 
 const {
     productList,
@@ -13,14 +6,16 @@ const {
     realShoppers
 } = require('../database')
 
+// importing test data
+
 let {
     list,
     orders,
     shoppers
 } = require('./data')
+
+// For Pretty Tables
 const print = require('node-print');
-
-
 
 const assert = require('chai').assert;
 
