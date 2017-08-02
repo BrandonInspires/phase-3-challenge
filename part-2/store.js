@@ -9,30 +9,31 @@ const command = process.argv[2];
 const argument = process.argv[3];
 const print = require('node-print');
 
-function route(command, argument) {
+function routes(command, argument) {
     switch (command) {
         case "product-list":
-            productList(argument)
-                .then(function (data) {
-                    print.pt(data)
-                })
-                .catch(function (error) {
-                    console.log(error)
-                });
+            return productList(argument)
+                .then(list => print.pt(list))
+                .catch(error => error);
             break;
         case "shopper-orders":
-            shopperOrders(argument).then(function (data) {
-                print.pt(data)
-            });
+            return shopperOrders(argument)
+            productList(argument)
+                .then(orders => print.pt(orders))
+                .catch(error => error);
             break;
         case "real-shoppers":
-            realShoppers().then(function (data) {
-                print.pt(data)
-            });
+            return realShoppers()
+            productList(argument)
+                .then(shoppers => print.pt(shoppers))
+                .catch(error => error);
             break;
+
         default:
             console.log("Please Enter 'product-list', 'shopper-orders', or 'real-shoppers'")
             break;
     }
 }
-route(command, argument)
+routes(command, argument)
+
+module.exports = routes
