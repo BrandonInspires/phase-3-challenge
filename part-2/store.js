@@ -14,21 +14,35 @@ function route(command, argument) {
         case "product-list":
             productList(argument)
                 .then(function (data) {
-                    print.pt(data)
+                    if (data) {
+                        return print.pt(data)
+                    }
                 })
                 .catch(function (error) {
                     console.log(error)
                 });
             break;
         case "shopper-orders":
-            shopperOrders(argument).then(function (data) {
-                print.pt(data)
-            });
+            shopperOrders(argument)
+                .then(function (data) {
+                    if (data) {
+                        return print.pt(data)
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error)
+                });
             break;
         case "real-shoppers":
-            realShoppers().then(function (data) {
-                print.pt(data)
-            });
+            realShoppers()
+                .then(function (data) {
+                    if (data) {
+                        return print.pt(data)
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error)
+                });
             break;
         default:
             console.log("Please Enter 'product-list', 'shopper-orders', or 'real-shoppers'")
